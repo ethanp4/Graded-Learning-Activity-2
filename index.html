@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <label for="sort">Sort by price: </label>
+    <select onchange="appendToPage()" id="sort">
+        <option>Ascending</option>
+        <option>Descending</option>
+    </select>
+    <label for="filter">Filter by category: </label>
+    <select onchange="appendToPage()" id="filter">
+        <option>None</option>
+        <option>Men's Clothing</option>
+        <option>Women's Clothing</option>
+        <option>Jewelery</option>
+        <option>Electronics</option>
+    </select>
+    <div id="content"></div>
+    
+</body>
+</html>
