@@ -8,20 +8,23 @@
 
 </head>
 <body>
-    <label for="sort">Sort by price: </label>
-    <select onchange="appendToPage()" id="sort">
-        <option>Ascending</option>
-        <option>Descending</option>
-    </select>
-    <label for="filter">Filter by category: </label>
-    <select onchange="appendToPage()" id="filter">
-        <option>None</option>
-        <option>Men's Clothing</option>
-        <option>Women's Clothing</option>
-        <option>Jewelery</option>
-        <option>Electronics</option>
-    </select>
-    <div id="content"></div>
-    
+    <span id="options">
+        <label for="sort">Sort by price: </label>
+        <select onchange="appendToPage()" id="sort">
+            <option>Ascending</option>
+            <option>Descending</option>
+        </select>
+        <label for="filter">Filter by category: </label>
+        <select onchange="appendToPage()" id="filter">
+            <option>None</option>
+            <option>Men's Clothing</option>
+            <option>Women's Clothing</option>
+            <option>Jewelery</option>
+            <option>Electronics</option>
+        </select>
+        <span id="count" style="margin-right: 3px;"></span>
+    </span>
+    <br><br>
+    <div id="content"></div>    
 </body>
 </html>

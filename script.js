@@ -1,6 +1,7 @@
 let data
 let sortedData
 let prevSortMethod = "Ascending"
+let count = 0
 
 const requestProducts = (url) => {
     return $.ajax({
@@ -15,11 +16,10 @@ const requestProducts = (url) => {
 };
 
 function appendToPage() {
+    count = 0
     $("#content").html("")
     method = $("#sort").val()
     filter = $("#filter").val()
-
-    console.log(filter)
 
     if (method != prevSortMethod) {
         //use this to only reverse the data if necessary
@@ -28,20 +28,20 @@ function appendToPage() {
 
     $.each(sortedData, (index, product) => {
         if (filter == "None" || filter.toLowerCase() == product.category) {
+            count++
             //if there is no filter or the filter matches the category
             //then add the item to the page
             $("#content").append(`
-            <div>
-                <h3>${product.title}</h3>
-                <p>Price: $${product.price}</p>
-                <p>Description: ${product.description}</p>
-                <p>Category: ${product.category}</p>
+            <div class="product">
+                <h3>${product.title}</h3>   
                 <img src="${product.image}" alt="${product.title}">
+                <p>${product.description}</p>
+                <p class="price">$${product.price}</p>
             </div>
         `)
         }
     });
-
+    $("#count").html(`${count} products found`)
     prevSortMethod = method;
 }
 
